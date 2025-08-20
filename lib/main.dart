@@ -1,3 +1,5 @@
+import 'package:flut_abhi/alignment_screen.dart';
+import 'package:flut_abhi/counter_screen.dart';
 import 'package:flut_abhi/home_screen.dart';
 import 'package:flut_abhi/login_screen.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +11,13 @@ class MyApp extends StatelessWidget{
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Abhi app",
-        home: HomeScreen()
+        theme: ThemeData(
+          textTheme: TextTheme(
+            headlineLarge: TextStyle(fontSize: 25, color: Colors.red),
+            bodyMedium: TextStyle(fontSize: 16, color: Colors.blue)
+          )
+        ),
+        home: CounterScreen()
     );
   }
 

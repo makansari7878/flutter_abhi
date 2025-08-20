@@ -8,11 +8,11 @@ class HomeScreen extends StatelessWidget{
      appBar: AppBar(title: Text("HOME SCREEN"),),
      body: Material(
        color: Colors.greenAccent,
-       child: getListView()
+       child: getLongListView()
      ),
    );
   }
-
+  //
 
   Widget getListView(){
     var listView = ListView(
@@ -48,6 +48,28 @@ class HomeScreen extends StatelessWidget{
     );
 
     return listView;
+  }
+
+  List<String> getItems(){
+    var items = List<String>.generate(1000, (counter) => "Item number -- $counter");
+    return items;
+  }
+
+  Widget getLongListView(){
+    var itemList = getItems();
+
+    var listView = ListView.builder(itemBuilder: (context, index) {
+      return ListTile(
+        leading: Icon(Icons.ac_unit_outlined),
+        title: Text(itemList[index]),
+        onTap: (){
+          debugPrint("you clicked ${itemList[index]}");
+        },
+      );
+    });
+
+    return listView;
+
   }
 
 }
