@@ -8,13 +8,46 @@ class HomeScreen extends StatelessWidget{
      appBar: AppBar(title: Text("HOME SCREEN"),),
      body: Material(
        color: Colors.greenAccent,
-       child: Center(
-         child:  Text("Welcome to Home Screen", textDirection: TextDirection.ltr,
-             style: TextStyle(fontSize: 20, color: Colors.red,)
-         ),
-       ),
+       child: getListView()
      ),
    );
+  }
+
+
+  Widget getListView(){
+    var listView = ListView(
+      children: [
+        ListTile(
+          leading: Icon(Icons.ac_unit),
+          title: Text("FIRST RECORD"),
+
+          trailing: Icon(Icons.access_alarm),
+          onTap: (){
+            debugPrint("the item is cliecked");
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.ac_unit),
+          title: Text("SECOND RECORD"),
+          subtitle: Text("99985858"),
+          trailing: Icon(Icons.access_alarm),
+          onTap: (){
+            debugPrint("the item is cliecked");
+          },
+        ),
+        ListTile(
+          leading: Icon(Icons.ac_unit),
+          title: Text("THIRD RECORD"),
+          subtitle: Text("99985858"),
+          trailing: Icon(Icons.access_alarm),
+          onTap: (){
+            debugPrint("the item is cliecked");
+          },
+        ),
+      ],
+    );
+
+    return listView;
   }
 
 }
