@@ -49,8 +49,9 @@ void processText(){
                   controller: usernameController,
                   decoration: InputDecoration(
                     hintText: "Enter user name",
-                    label: Text("Username"),
-                    border: OutlineInputBorder(),
+                    label: Text("Username",),
+                    labelStyle: TextStyle(color:Colors.green)
+
                   ),
                 )),
 
@@ -71,7 +72,8 @@ void processText(){
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Username is  :  ${username}")
+                    Text("Username is  :  ${username}",
+                    style: Theme.of(context).textTheme.headlineLarge,)
                   ],
             ),
           ],
