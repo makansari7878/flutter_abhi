@@ -12,6 +12,11 @@ class MyApp extends StatelessWidget{
     return MaterialApp(
         title: "Abhi app",
         debugShowCheckedModeBanner: false,
+        routes: {
+          ("/") : (context) => HomeScreen(),
+          // ("/counter"): (context) => CounterScreen(),
+          // ("/login") : (context) => LoginScreen()
+        },
         theme: ThemeData(
           textTheme: TextTheme(
             headlineLarge: TextStyle(fontSize: 25, color: Colors.red),
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget{
             hintStyle: TextStyle(color: Colors.deepPurple)
           )
         ),
-        home: CounterScreen()
+       // home: CounterScreen()
     );
   }
 

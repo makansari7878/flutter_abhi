@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 
 
 class CounterScreen extends StatefulWidget{
+
+   String value ="";
+  CounterScreen({required this.value});
   @override
   State<StatefulWidget> createState() {    
-    return CounterScreenState();
+    return CounterScreenState(value);
   }
 }
 
 class CounterScreenState extends State<CounterScreen>{
-
+late String value;
+CounterScreenState(this.value);
 var username = "";
 var password = "";
 TextEditingController usernameController = TextEditingController();
@@ -49,7 +53,7 @@ void processText(){
                   controller: usernameController,
                   decoration: InputDecoration(
                     hintText: "Enter user name",
-                    label: Text("Username",),
+                    label: Text("Username with value : ${value}",),
                     labelStyle: TextStyle(color:Colors.green)
 
                   ),

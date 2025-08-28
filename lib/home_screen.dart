@@ -1,4 +1,6 @@
 
+import 'package:flut_abhi/counter_screen.dart';
+import 'package:flut_abhi/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget{
@@ -63,7 +65,13 @@ class HomeScreen extends StatelessWidget{
         leading: Icon(Icons.ac_unit_outlined),
         title: Text(itemList[index]),
         onTap: (){
-          debugPrint("you clicked ${itemList[index]}");
+          //Navigator.pushNamed(context, "/login");
+          //Navigator.pushReplacementNamed(context, "/login");
+          var item = itemList[index];
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (ctx) => CounterScreen(value : item))
+          );
+
         },
       );
     });
