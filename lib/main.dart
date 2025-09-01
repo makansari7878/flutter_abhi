@@ -1,3 +1,4 @@
+import 'package:flut_abhi/Bottom_Screen.dart';
 import 'package:flut_abhi/alignment_screen.dart';
 import 'package:flut_abhi/counter_screen.dart';
 import 'package:flut_abhi/home_screen.dart';
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget{
         title: "Abhi app",
         debugShowCheckedModeBanner: false,
         routes: {
-          ("/") : (context) => HomeScreen(),
+          ("/") : (context) => BottomScreen(),
           // ("/counter"): (context) => CounterScreen(),
           // ("/login") : (context) => LoginScreen()
         },
