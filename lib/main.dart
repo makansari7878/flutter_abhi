@@ -1,11 +1,19 @@
 import 'package:flut_abhi/Bottom_Screen.dart';
 import 'package:flut_abhi/alignment_screen.dart';
 import 'package:flut_abhi/counter_screen.dart';
+import 'package:flut_abhi/hive_screen.dart';
 import 'package:flut_abhi/home_screen.dart';
 import 'package:flut_abhi/login_screen.dart';
+import 'package:flut_abhi/shared_pref_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 
-void main() => runApp(MyApp());
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  var directory = await getApplicationDocumentsDirectory();
+  Hive.init(directory.path);
+}
 
 class MyApp extends StatelessWidget{
   @override
@@ -14,7 +22,7 @@ class MyApp extends StatelessWidget{
         title: "Abhi app",
         debugShowCheckedModeBanner: false,
         routes: {
-          ("/") : (context) => BottomScreen(),
+          ("/") : (context) => HiveScreen(),
           // ("/counter"): (context) => CounterScreen(),
           // ("/login") : (context) => LoginScreen()
         },
